@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">  <!-- Declares the document type as HTML and sets the language to English -->
+<head>
+    <meta charset="UTF-8">  <!-- Sets the character encoding to UTF-8 for proper text rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Ensures responsive design on mobile devices -->
+    <title>Overwatch Hero Picker</title>  <!-- Sets the title of the webpage to "Overwatch Hero Picker" -->
+    <link rel="stylesheet" href="styles.css">  <!-- Links an external CSS file for styling -->
+</head>
+<body>
+    <div class="container">  <!-- Main container for layout, holding both hero list and enemy team sections -->
+        <!-- Map Selection Section -->
+        <div class="map-selection">
+            <h2>Map</h2>
+            <div class="category-tabs">
+                <button class="tab-button active" data-category="All">All Maps</button>
+                <button class="tab-button" data-category="Control">Control</button>
+                <button class="tab-button" data-category="Escort">Escort</button>
+                <button class="tab-button" data-category="Flashpoint">Flashpoint</button>
+                <button class="tab-button" data-category="Hybrid">Hybrid</button>
+                <button class="tab-button" data-category="Push">Push</button>
+                <button class="tab-button" data-category="Clash">Clash</button>
+            </div>
+            <div class="maps" id="map-list">
+                <!-- Map elements will be dynamically added here -->
+            </div>
+        </div>
+        <!-- Hero List Section -->
+        <div class="hero-list">  
+            <h2>Hero List</h2>  <!-- Section header for the hero list -->
+            <div class="category-tabs">
+                <button class="tab-button active" data-category="All">All Heroes</button>
+                <button class="tab-button" data-category="Tank">Tanks</button>
+                <button class="tab-button" data-category="Support">Supports</button>
+                <button class="tab-button" data-category="DPS">DPS</button>
+            </div>
+            <div class="filter">  
+                <input type="text" id="search-input" placeholder="Filter heroes...">  <!-- Text input for filtering heroes by name -->
+            </div>
+            <div class="heroes" id="hero-list">
+                <!-- Hero elements will be dynamically added here -->  <!-- Placeholder for dynamically added hero elements -->
+            </div>
+        </div>
+        <!-- Enemy Team Section -->
+        <div class="team-picks">
+            <h2>Enemy Team</h2>  <!-- Section header for the enemy team -->
+            <div class="enemy-team-controls" style="margin-bottom: 10px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <label for="enemy-team-limit-select">Team Size Limit:</label>
+                <select id="enemy-team-limit-select" style="padding: 5px;">
+                    <option value="5" selected>5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <div class="team" id="enemy-team-container">
+                <!-- Enemy picks will be displayed here -->  <!-- Placeholder for dynamically added enemy hero elements -->
+            </div>
+            <button id="clear-button">Clear</button>  <!-- Button to clear the enemy team selection -->
+        </div>
+    </div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>
