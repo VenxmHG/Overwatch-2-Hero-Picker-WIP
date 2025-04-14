@@ -47,23 +47,24 @@ const heroes = [
 // Object defining which heroes counter others, where each hero is mapped to an array of heroes they counter
 const counters = {
     'Ana': ['Bastion', 'Doomfist', 'Hazard', 'Junker Queen', 'Mauga', 'Ramattra', 'Roadhog', 'Torbjorn', 'Venture', 'Wrecking Ball'],
-    'Ashe': ['Bastion', 'Brigitte', 'Cassidy', 'Echo', 'Hazard', 'Junker Queen', 'Junkrat', 'Juno', 'Lifeweaver', 'Orisa', 'Pharah', 'Soldier: 76', 'Torbjorn', 'Zarya'],
+    'Ashe': ['Bastion', 'Brigitte', 'Cassidy', 'Echo', 'Hazard', 'Junker Queen', 'Junkrat', 'Juno', 'Lifeweaver', 'Orisa', 'Pharah', 'Soldier: 76', 'Torbjorn', 'Zarya'], // Juno countered by range
     'Baptiste': ['Junkrat', 'Pharah', 'Torbjorn', 'Tracer'],
     'Bastion': ['Brigitte', 'Moira', 'Ramattra', 'Reinhardt', 'Winston', 'Wrecking Ball', 'Zarya'],
     'Brigitte': ['Doomfist', 'D.VA', 'Hazard', 'Tracer', 'Winston', 'Wrecking Ball'],
     'Cassidy': ['Doomfist', 'Echo', 'Hazard', 'Lucio', 'Moira', 'Pharah', 'Reaper', 'Sombra', 'Torbjorn', 'Venture', 'Winston', 'Wrecking Ball'],
-    'Doomfist': ['Ashe', 'Baptiste', 'Hazard', 'Symmetra', 'Venture', 'Widowmaker'],
+    'Doomfist': ['Ashe', 'Baptiste', 'Hazard', 'Juno', 'Symmetra', 'Venture', 'Widowmaker'], // Countered by Juno's disruption/peel?
     'D.VA': ['Ana', 'Ashe', 'Bastion', 'Cassidy', 'Doomfist', 'Echo', 'Hanzo', 'Hazard', 'Illari', 'Junkrat', 'Juno', 'Kiriko', 'Mauga', 'Mercy', 'Pharah', 'Reaper', 'Roadhog', 
             'Sombra', 'Torbjorn', 'Tracer'],
     'Echo': ['Bastion', 'Brigitte', 'Doomfist', 'Genji', 'Hazard', 'Junkrat', 'Lifeweaver', 'Orisa', 'Pharah', 'Ramattra', 'Reaper', 'Sigma', 'Torbjorn', 'Venture', 'Winston', 'Zarya'],
-    'Genji': ['Ashe', 'Bastion', 'Hanzo', 'Hazard', 'Widowmaker'],
+    'Genji': ['Ashe', 'Bastion', 'Hanzo', 'Hazard', 'Juno', 'Widowmaker'], // Counters Juno dive potential
     'Hanzo': ['Ashe', 'Bastion', 'Cassidy', 'Hazard', 'Junkrat', 'Junker Queen', 'Juno', 'Lifeweaver', 'Moira', 'Orisa', 'Reaper', 'Roadhog', 'Sojourn', 'Soldier: 76', 'Symmetra', 
             'Torbjorn', 'Widowmaker', 'Zarya'],
     'Hazard' : ['Bastion', 'Junker Queen', 'Ramattra', 'Reinhardt', 'Torbjorn', 'Zenyatta'], // Corrected: Removed Ana, Ashe, Orisa, Sigma, Widowmaker
     'Illari': ['Echo', 'Lifeweaver', 'Pharah', 'Torbjorn', 'Tracer', 'Zarya'],
     'Junkrat': ['Brigitte', 'Reaper', 'Venture'],
     'Junker Queen': ['Winston'],
-    'Juno': [''],
+    // Juno counters immobile heroes, enables dive vs certain comps (Sigma/Bap/Illari), provides speed/disruption
+    'Juno': ['Ana', 'Bastion', 'Baptiste', 'Illari', 'Lifeweaver', 'Reinhardt', 'Roadhog', 'Sigma', 'Symmetra', 'Zenyatta'], 
     'Kiriko': ['Ashe', 'Doomfist', 'Junker Queen', 'Mei', 'Orisa', 'Reaper', 'Reinhardt', 'Sigma', 'Sombra', 'Torbjorn', 'Tracer', 'Widowmaker', 'Zarya'],
     'Lifeweaver': ['Ramattra', 'Reaper', 'Reinhardt', 'Zarya'],
     'Lucio': ['Genji', 'Junker Queen', 'Mei', 'Reaper', 'Tracer', 'Widowmaker'],
@@ -79,18 +80,18 @@ const counters = {
     'Reinhardt': ['Brigitte', 'Junker Queen', 'Pharah', 'Sigma', 'Widowmaker', 'Zarya'],
     'Roadhog': ['Bastion', 'Doomfist', 'Hazard', 'Moira', 'Reinhardt', 'Winston', 'Wrecking Ball'],
     'Sigma': ['Ashe', 'Bastion', 'Cassidy', 'Hanzo', 'Hazard', 'Illari', 'Junkrat', 'Orisa', 'Reaper', 'Roadhog', 'Soldier: 76', 'Torbjorn'],
-    'Sojourn': ['Bastion', 'Cassidy', 'Echo', 'Hazard', 'Orisa', 'Pharah', 'Ramattra', 'Roadhog', 'Soldier: 76', 'Torbjorn', 'Zarya'],
-    'Soldier: 76': ['Echo', 'Hazard', 'Junker Queen', 'Pharah', 'Sigma', 'Torbjorn'],
-    'Sombra': ['Ana', 'Ashe', 'Bastion', 'Doomfist', 'Echo', 'Hazard', 'Lucio', 'Mauga', 'Mercy', 'Pharah', 'Sigma', 'Soldier: 76', 'Symmetra', 'Widowmaker', 'Wrecking Ball', 'Zenyatta'],
+    'Sojourn': ['Bastion', 'Cassidy', 'Echo', 'Hazard', 'Juno', 'Orisa', 'Pharah', 'Ramattra', 'Roadhog', 'Soldier: 76', 'Torbjorn', 'Zarya'],
+    'Soldier: 76': ['Echo', 'Hazard', 'Juno', 'Junker Queen', 'Pharah', 'Sigma', 'Torbjorn'],
+    'Sombra': ['Ana', 'Ashe', 'Bastion', 'Doomfist', 'Echo', 'Hazard', 'Juno', 'Lucio', 'Mauga', 'Mercy', 'Pharah', 'Sigma', 'Soldier: 76', 'Symmetra', 'Widowmaker', 'Wrecking Ball', 'Zenyatta'], // Counters Juno hard
     'Symmetra': ['Mauga', 'Sigma', 'Torbjorn'],
     'Torbjorn': ['Genji', 'Moira', 'Reaper', 'Sombra', 'Tracer', 'Winston'],
     'Tracer': ['Ana', 'Ashe', 'Doomfist', 'Hazard', 'Juno', 'Mercy', 'Pharah', 'Ramattra', 'Sigma', 'Soldier: 76', 'Sombra', 'Torbjorn', 
         'Widowmaker', 'Zenyatta'],
     'Venture': ['Doomfist', 'Genji', 'Hanzo', 'Pharah', 'Sombra'],
     'Widowmaker': ['Ana', 'Ashe', 'Cassidy', 'Hanzo', 'Hazard', 'Illari', 'Junker Queen', 'Junkrat', 'Juno', 'Lifeweaver', 'Mauga', 'Orisa', 'Pharah', 'Sojourn', 
-                'Soldier: 76', 'Torbjorn', 'Widowmaker', 'Zarya'], // Corrected: Added Hazard
-    'Winston': ['Hazard', 'Mercy', 'Pharah', 'Symmetra', 'Widowmaker', 'Zarya'],
-    'Wrecking Ball': ['Ashe', 'Baptiste', 'Hazard', 'Illari', 'Kiriko', 'Mercy', 'Moira', 'Pharah', 'Soldier: 76', 'Symmetra', 'Widowmaker', 'Zarya'],
+                'Soldier: 76', 'Torbjorn', 'Widowmaker', 'Zarya'],
+    'Winston': ['Hazard', 'Juno', 'Mercy', 'Pharah', 'Symmetra', 'Widowmaker', 'Zarya'], // Counters Juno dive potential
+    'Wrecking Ball': ['Ashe', 'Baptiste', 'Hazard', 'Illari', 'Kiriko', 'Mercy', 'Moira', 'Pharah', 'Soldier: 76', 'Symmetra', 'Widowmaker', 'Zarya'], // Counters Juno dive potential
     'Zarya': ['D.VA', 'Genji', 'Hazard', 'Junker Queen', 'Junkrat', 'Orisa'],
     'Zenyatta': ['Bastion', 'Doomfist', 'Junker Queen', 'Orisa', 'Ramattra', 'Roadhog', 'Torbjorn', 'Winston', 'Wrecking Ball']
 };
@@ -122,8 +123,8 @@ const maps = [
             'Ana': 0,          // Limited sightlines but good for anti-nade
             'Baptiste': 5,     // Immortality Field excellent but jumps limited by ceiling
             'Zenyatta': -5,    // Too vulnerable in enclosed spaces
-            'Juno': 10,        // Circuit breaker valuable in tight spaces
-            'Hazard': 15,      // Jagged Wall dominates narrow corridors, Violent Leap for engagement
+            'Juno': 15,        // Excels here. Glide for rotation/escape, Torpedoes/Ray strong in corridors. High HPS valuable.
+            'Hazard': 15,      // Jagged Wall dominates narrow corridors, Violent Leap for engagement/disruption
             'Wrecking Ball': -15, // Severely limited roll space in tight environment
             'Junker Queen': 15, // Excellent for close-quarters brawling
             'Orisa': 10,       // Good for javelin in corridors but limited space
@@ -170,8 +171,8 @@ const maps = [
             'Ana': 10,         // Sleep dart valuable in lab corridors, good sightlines through windows
             'Baptiste': 10,    // Immortality Field extremely valuable in labs with limited escape routes
             'Zenyatta': -5,    // Vulnerable in lab corridors but discord valuable through glass walls
-            'Juno': 15,        // Circuit Breaker placement options at key lab intersections
-            'Hazard': 10,      // Hook through glass walls and lab doorways catches enemies off guard
+            'Juno': 15,        // Strong. Can use geometry for verticality, speed useful, Torpedoes/Ray good in labs.
+            'Hazard': 10,      // Jagged Wall effective in corridors, Leap useful between sections, glass limits wall use
             'Wrecking Ball': 5, // Limited ceiling height restricts full potential, but good for disruption
             'Junker Queen': 10, // Strong in close-quarters lab engagements
             'Orisa': 5,        // Javelin Spin effective in lab corridors but limited by ceiling height
@@ -218,8 +219,8 @@ const maps = [
             'Ana': -5,           // Very limited sightlines in underground tunnels
             'Baptiste': 0,       // Immortality Field useful but jumping severely limited by ceiling
             'Zenyatta': -10,     // Extremely vulnerable in confined tunnels with limited escape
-            'Juno': 10,          // Circuit breaker valuable in underground chambers
-            'Hazard': 20,        // Jagged Wall extremely strong in tunnels, Leap for engagement
+            'Juno': 20,          // Excellent. Narrow tunnels amplify Torpedo/Ray value, Glide essential for survival/rotation.
+            'Hazard': 20,        // Jagged Wall extremely strong in tunnels, Leap for engagement/disruption
             'Wrecking Ball': -15, // Roll mechanics severely limited by narrow tunnels and low ceilings
             'Junker Queen': 15,  // Excellent for close-quarters combat in tunnels
             'Orisa': 5,          // Javelin useful in tunnels but limited by ceiling height
@@ -266,8 +267,8 @@ const maps = [
             'Ana': 15,         // Strong sightlines from elevation
             'Baptiste': 15,    // Excellent exo-boots value for accessing high grounds
             'Zenyatta': -15,   // Extremely vulnerable with limited escape routes
-            'Juno': 15,        // Excellent circuit breaker placement options on high ground
-            'Hazard': 10,      // Jagged Wall useful in doorways, Vault/Leap for mobility between levels
+            'Juno': 0,         // Struggles. Open map, many flank routes, vulnerable to snipers/dive. Glide usage risky.
+            'Hazard': 5,       // Leap useful for verticality, wall good for point chokes, but vulnerable to snipers
             'Wrecking Ball': 15, // Good mobility between levels and rooms
             'Junker Queen': -10, // Very limited vertical mobility against high ground positions
             'Orisa': -10,      // Severely limited mobility to contest high grounds
@@ -314,8 +315,8 @@ const maps = [
             'Ana': -5,         // Very limited sightlines through facility
             'Baptiste': 0,     // Limited ceiling height constrains jump advantage
             'Zenyatta': -10,   // Limited escape routes in tight corridors
-            'Juno': 15,        // Circuit breaker highly effective in facility
-            'Hazard': 15,      // Jagged Wall excellent for corridor control, Leap effective engage
+            'Juno': 10,        // Decent. Glide useful for rotation, Torpedoes/Ray good in facility, but vulnerable to flanks.
+            'Hazard': 15,      // Jagged Wall excellent for corridor control, Leap useful for point engage/disengage
             'Wrecking Ball': -15, // Mobility severely limited by facility layout and low ceilings
             'Junker Queen': 15, // Strong in close-quarters facility environment
             'Orisa': 15,       // Javelin effective in corridors and doorways
@@ -362,8 +363,8 @@ const maps = [
             'Ana': 0,           // Limited positions by temple structures
             'Baptiste': 0,      // Exo-boots limited by ceiling height
             'Zenyatta': -15,    // Extremely vulnerable with limited escape options
-            'Juno': 15,         // Circuit breaker very effective around drum
-            'Hazard': 15,       // Jagged Wall useful for controlling drum area, Leap less effective
+            'Juno': 10,         // Decent. Close quarters good for Torpedoes/Ray, but limited space for Glide maneuvering.
+            'Hazard': 15,       // Jagged Wall excellent for controlling drum point and corridors, Leap for engage
             'Wrecking Ball': 0, // Mobility limited by temple structure
             'Junker Queen': 15, // Strong brawl potential around drum
             'Orisa': 15,        // Javelin and fortify valuable for point control
@@ -410,8 +411,8 @@ const maps = [
             'Ana': 5,         // Some good sightlines from high ground but vulnerable
             'Baptiste': 15,   // Exo-boots provide good high ground access, IF valuable
             'Zenyatta': -10,  // Very vulnerable to dives in this enclosed/multi-angle map
-            'Juno': 10,       // Circuit Breaker good for controlling point area
-            'Hazard': 10,     // Hook effective around corners, wall can control chokes
+            'Juno': 5,        // Okay. Can use buildings for cover/verticality, but point is exposed. Glide usage key.
+            'Hazard': 10,     // Jagged Wall strong on point/chokes, Leap for vertical/engage, boop potential
             'Wrecking Ball': 15, // Good mobility to disrupt point and contest high ground
             'Junker Queen': 10, // Strong brawl on point, but limited vertical presence
             'Orisa': 5,       // Javelin spin/throw have boop potential, but vulnerable to high ground
@@ -458,8 +459,8 @@ const maps = [
             'Ana': 10,        // Good sightlines but vulnerable to boops/dives
             'Baptiste': 10,   // Exo-boots provide safety and positioning
             'Zenyatta': -20,  // Extremely vulnerable to boops, no mobility
-            'Juno': 10,       // Circuit Breaker placement can deny area near well
-            'Hazard': 20,     // Hook provides consistent environmental kill threat
+            'Juno': -5,       // Struggles. Open map, vulnerable to boops and snipers. Glide is main survival tool.
+            'Hazard': 15,     // Jagged Wall push excellent for boops near well, Leap less useful
             'Roadhog': 25,    // Premier Hook environmental kill potential
             'Orisa': 25,      // Javelin Throw/Spin premier boop potential, Fortify resists boops
             'Wrecking Ball': 20, // Premier boop potential with Roll/Piledriver
@@ -506,8 +507,8 @@ const maps = [
             'Ana': 25,        // Excellent long-range healing and damage potential
             'Baptiste': 15,   // High ground control with Exo-boots, IF valuable
             'Zenyatta': 0,    // Discord valuable but extremely vulnerable to snipers/dives
-            'Juno': 10,       // Can control angles but vulnerable in open
-            'Hazard': 0,      // Hook less effective at long range, wall limited value
+            'Juno': -15,      // Very Weak. Extremely open, prime sniper map, hard to use Glide safely.
+            'Hazard': -5,     // Very vulnerable to snipers/range, wall offers limited protection, leap predictable
             'Wrecking Ball': 20, // High mobility excels in this open environment
             'Junker Queen': -15, // Struggles significantly with range and lack of cover
             'Orisa': -5,      // Can pressure from range but limited mobility
@@ -555,7 +556,7 @@ const maps = [
             'Baptiste': 5,    // Limited sightlines on point
             'Zenyatta': -10,  // Too vulnerable in close quarters
             'Juno': 15,       // Good for circuit overload on point
-            'Hazard': 20,     // Excellent for environmental kills
+            'Hazard': 15,     // Strong wall control on point/chokes, good boop potential
             'Venture': 20     // Exceptional for burrowing onto point undetected and Drill Dash for environmental kills around the central point
         }
     },
@@ -585,7 +586,7 @@ const maps = [
             'Baptiste': 5,    // Limited sightlines
             'Zenyatta': -10,  // Too vulnerable in close quarters
             'Juno': 15,       // Good for circuit overload on point
-            'Hazard': 20,     // Excellent for environmental kills
+            'Hazard': 15,     // Wall strong on bridge/point, good boop potential off edges
             'Venture': 20     // Excellent for burrowing onto point and flanking, Drill Dash effective for environmental kills around edges of point
         }
     },
@@ -614,8 +615,8 @@ const maps = [
             'Ana': 10,        // Good sightlines from various positions
             'Baptiste': 10,   // Good for supporting on point, jump boots for mobility
             'Zenyatta': -5,   // Vulnerable to flanks and environmental hazards
-            'Juno': 15,       // Good for circuit overload on point, pylon placement options
-            'Hazard': 20,     // Excellent for environmental kills with both primary and ultimate
+            'Juno': 0,        // Weak. Very open point, many flank angles, vulnerable to dive/snipers.
+            'Hazard': 10,     // Wall useful for point control, boop potential off edges, Leap OK for vertical
             'Venture': 20     // Excellent for burrowing across garden and Drill Dash for environmental kills
         }
     },
@@ -644,8 +645,8 @@ const maps = [
             'Ana': 10,        // Good sightlines
             'Baptiste': 10,   // Good high ground access
             'Zenyatta': -10,  // Too exposed
-            'Juno': 10,       // Good for high ground control
-            'Hazard': 10,      // Good for controlling chokepoints and protecting against dives
+            'Juno': 5,        // Okay. Can abuse high ground/verticality, but point is open. Needs careful positioning.
+            'Hazard': 5,      // Wall useful for chokes/point, Leap for high ground, but many angles to cover
             'Wrecking Ball': 10, // Good mobility map
             'Junker Queen': -10, // Too spread out
             'Orisa': -10,     // Too spread out
@@ -692,8 +693,8 @@ const maps = [
             'Ana': 10,        // Good sightlines
             'Baptiste': 10,   // Good high ground access
             'Zenyatta': -10,  // Too exposed
-            'Juno': 10,       // Good for high ground control
-            'Hazard': 0,      // Moderate utility but too open in center area
+            'Juno': 5,        // Okay. Similar to Village, high ground play is key, but center is dangerous.
+            'Hazard': 5,      // Wall good on point, boop potential, Leap ok, but vulnerable in center
             'Wrecking Ball': 10, // Good for boops, mobility helps prevent falls
             'Roadhog': 10,    // Good for hook environmental kills
             'Orisa': 10,      // Good for javelin environmental kills
@@ -740,8 +741,8 @@ const maps = [
             'Ana': 10,        // Good sightlines, sleep dart disrupts around pit
             'Baptiste': 10,   // Good high ground access
             'Zenyatta': -20,  // Too exposed, no mobility near pit
-            'Juno': 10,       // Good for high ground control, can displace enemies
-            'Hazard': 15,     // Good for area control, hook for environmental kills
+            'Juno': 10,       // Decent. Close quarters point benefits Torpedoes/Ray. Glide crucial for survival.
+            'Hazard': 15,     // Wall excellent for point control and boops into pit
             'Wrecking Ball': 15, // Good for boops, mobility helps prevent falls
             'Roadhog': 15,    // Good for hook environmental kills
             'Orisa': 15,      // Good for javelin environmental kills
@@ -788,8 +789,8 @@ const maps = [
             'Ana': 0,          // Limited sightlines but anti-nade effective on grouped enemies
             'Baptiste': 5,     // Immortality Field valuable on point, jumps less unique with jump pad
             'Zenyatta': -5,    // Vulnerable due to predictable jump pad movement
-            'Juno': 15,        // Circuit breaker extremely effective around jump pad
-            'Hazard': 15,      // Hook extremely effective against predictable jump pad users
+            'Juno': 15,        // Strong. Close quarters, jump pad aids rotation, Ray/Torpedoes very effective.
+            'Hazard': 15,      // Wall strong for point control/splitting jump pad users, Leap for engage
             'Wrecking Ball': 15, // Jump pad extends mobility options and adds unpredictability
             'Junker Queen': 15,  // Strong brawl potential on central point
             'Orisa': 15,       // Javelin effective for environmental kills near jump pad
@@ -836,8 +837,8 @@ const maps = [
             'Ana': 15,         // Great sightlines from elevated positions
             'Baptiste': 15,    // Excellent exo-boots value for accessing multiple levels
             'Zenyatta': -5,    // Vulnerable but discord orb valuable through sightlines
-            'Juno': 15,        // Good circuit breaker placement options on different levels
-            'Hazard': 0,       // Limited hook opportunities in open garden areas
+            'Juno': 0,         // Weak. Very open, vulnerable to snipers/dive. Glide usage is high risk.
+            'Hazard': 0,       // Leap useful for levels, wall situational, vulnerable to range/snipers
             'Wrecking Ball': 20, // Exceptional mobility across multi-level garden environment
             'Junker Queen': -5,  // Limited vertical mobility to contest high grounds
             'Orisa': -5,       // Limited mobility to contest multiple garden levels
@@ -884,8 +885,8 @@ const maps = [
             'Ana': 10,         // Sleep dart devastatingly effective against jump pad users
             'Baptiste': 15,    // Exo-boots combines well with jump pad for extreme height
             'Zenyatta': -10,   // Extremely vulnerable on predictable jump pad trajectory
-            'Juno': 15,        // Circuit breaker highly effective near jump pad
-            'Hazard': 15,      // Hook extremely effective against jump pad users
+            'Juno': 15,        // Strong. Jump pad aids rotation, enclosed spaces good for abilities, high ground access.
+            'Hazard': 15,      // Wall excellent for controlling point/jump pad, Leap uses jump pad well
             'Wrecking Ball': 20, // Jump pad extends already excellent mobility
             'Junker Queen': 5,  // Command shout valuable for team using jump pad
             'Orisa': 10,       // Javelin effective for jump pad interception
@@ -932,8 +933,8 @@ const maps = [
             'Ana': 10,          // Good sightlines for healing and anti-nade
             'Baptiste': 10,     // Exo-boots provide mobility, Immortality Field valuable on point
             'Zenyatta': -10,    // Too vulnerable in open areas with limited escape
-            'Juno': 15,         // Strong area control with multi-angle damage potential
-            'Hazard': 5,        // Good for controlling tight areas but vulnerable to snipers on beach
+            'Juno': 0,          // Weak. Very open, long sightlines favor snipers, Glide usage risky.
+            'Hazard': -5,       // Vulnerable to long sightlines, wall has few chokes, boop potential near water
             'Wrecking Ball': 15, // Great mobility and displacing enemies near water
             'Junker Queen': 5,   // Good for point control but limited vertical mobility
             'Orisa': 5,         // Javelin effective near water, but limited vertical mobility
@@ -981,7 +982,7 @@ const maps = [
             'Baptiste': 10,     // Immortality Field valuable in tight spaces
             'Zenyatta': 0,      // Limited escape routes but discord valuable
             'Juno': 15,         // Strong area control in tight spaces
-            'Hazard': 15,       // Excellent in urban environment with walls for Jagged Wall placement
+            'Hazard': 15,       // Excellent in urban environment with walls for Jagged Wall placement, Leap for engage
             'Wrecking Ball': 0, // Limited roll space and many obstacles
             'Junker Queen': 15, // Excellent for close-quarters brawling
             'Orisa': 10,        // Javelin useful for corridor fights
@@ -1028,8 +1029,8 @@ const maps = [
             'Ana': 10,          // Good sightlines from certain positions
             'Baptiste': 10,     // Exo-boots valuable for reaching different heights
             'Zenyatta': -10,    // Too vulnerable with limited mobility on volcanic terrain
-            'Juno': 10,         // Good for controlling certain areas of volcano
-            'Hazard': -5,       // Limited by vertical elements and too many open sight lines
+            'Juno': 0,         // Struggles. Very open, lots of high ground, vulnerable to snipers/dive.
+            'Hazard': -10,      // Leap useful but very exposed to range/snipers, Wall has few good choke points
             'Wrecking Ball': 20, // Exceptional mobility across volcanic terrain
             'Junker Queen': 0,   // Limited by vertical elements of volcano
             'Orisa': 0,         // Limited mobility on uneven terrain
@@ -1061,7 +1062,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10, 
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 0,     // Mixed. Good on point A and final, but open middle section
+            'Hazard': 5 // Good chokes on point A and final, but open areas in between
         }
     },
     { 
@@ -1074,7 +1077,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Bridge and castle provide good chokes for Ray, Glide useful
+            'Hazard': 15 // Excellent wall usage on bridge, castle chokes, and final point
         }
     },
     { 
@@ -1087,7 +1092,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -5,    // Weak. Point A decent, but streets/sound stage expose her to snipers
+            'Hazard': -5 // Point A good, but very long sightlines and open areas later favor range
         }
     },
     { 
@@ -1100,7 +1107,9 @@ const maps = [
             'Widowmaker': -10,  
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 15,    // Excellent. Narrow streets with high ground for Glide rotation, great Torpedo/Ray value
+            'Hazard': 15 // Excellent choke control throughout, especially streets phase and final point
         }
     },
     {
@@ -1113,7 +1122,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 5,     // Okay. Good chokes for Ray pushes at first/final, vulnerable mid section
+            'Hazard': 5 // Good chokes early and late, but open mid-section and high ground vulnerability
         }
     },
     {
@@ -1126,7 +1137,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -10,   // Weak. Extremely vulnerable due to high ground focus, especially points B/C
+            'Hazard': 0 // Point A decent, but later phases very open with strong high ground disadvantage
         }
     },
     { 
@@ -1139,7 +1152,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -5,    // Weak. High ground focus and open areas expose her to dive/snipers
+            'Hazard': -5 // Some chokes, but generally open with significant high ground play favoring range/mobility
         }
     },
     {
@@ -1152,7 +1167,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Pro play map - despite long sightlines, limited flanks suit her
+            'Hazard': -15 // Extremely long sightlines, very vulnerable to snipers/range, limited wall value
         }
     },
     {
@@ -1165,7 +1182,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Good chokes and tight spaces favor Torpedo/Ray value
+            'Hazard': 10 // Good choke points and close-quarters areas, especially first and last points
         }
     },
     {
@@ -1178,7 +1197,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -15,   // Very weak. Extremely long sightlines make Glide dangerous, Medic gun falloff issue
+            'Hazard': -10 // Very long sightlines in first and third sections heavily favor range/snipers
         }
     },
     {
@@ -1191,7 +1212,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -10,   // Weak. Very exposed in points A/C, vulnerable to snipers/flank
+            'Hazard': -10 // Very open first and third points, heavily favors range/snipers, limited wall value
         }
     },
     {
@@ -1204,7 +1227,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 5,     // Okay. Gas station/final point good, second point risky.
+            'Hazard': 5 // Good chokes on first and last point, but second point is very open
         }
     },
     {
@@ -1216,7 +1241,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Tight spaces and corridors excellent for Torpedoes and Ray, good flanking defense
+            'Hazard': 10 // Numerous chokes and tight corners benefit wall/close combat
         }
     },
     {
@@ -1229,7 +1256,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -15,   // Very weak. Multiple high grounds, easy flanks, Glide limited, very vulnerable
+            'Hazard': -5 // Strong high grounds favor range/divers, some tight areas but often bypassable
         }
     },
     {
@@ -1242,7 +1271,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 0,     // Mixed. Effectiveness varies greatly between open and enclosed points
+            'Hazard': 5 // Mix of open areas and tighter building points, Leap useful for rotation
         }
     },
     {
@@ -1255,7 +1286,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': -5,    // Weak. Large size stresses rotation, many flanks challenge her survivability
+            'Hazard': 0 // Very large, mix of open and closed points, high mobility needed, some vulnerability
         }
     },
     {
@@ -1267,7 +1300,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 5,     // Okay. Central push area good for Ray, but flanks under bridge problematic
+            'Hazard': 5 // Good wall usage in central area and under bridge, but vulnerable on flanks
         }
     },
     {
@@ -1280,7 +1315,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 0,     // Mixed. Good flanks but exposed center area. Glide mobility useful but risky.
+            'Hazard': 0 // Mix of tight flanks (good) and open center/high ground (bad)
         }
     },
     {
@@ -1293,7 +1330,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Tight urban environment favors Torpedo/Ray, good cover for Glide
+            'Hazard': 10 // Numerous corners and tight spaces benefit wall/close combat
         }
     },
     {
@@ -1306,7 +1345,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 5,     // Okay. Verticality good for Glide rotations, mix of spaces requires adaptation
+            'Hazard': 5 // Good verticality for Leap, some chokes, but also open areas
         }
     },
     {
@@ -1319,7 +1360,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 10,    // Strong. Tight spaces excellent for close-quarters healing/damage
+            'Hazard': 10 // Tight map with good wall potential and brawl focus
         }
     },
     {
@@ -1331,7 +1374,9 @@ const maps = [
             'Widowmaker': -10,
             'Genji': 10,
             'Hanzo': 10,
-            'Tracer': -10
+            'Tracer': -10,
+            'Juno': 15,    // Very strong. Extremely tight chokes, Hyper Ring for engage/disengage, Ray excellent
+            'Hazard': 15 // Extremely tight chokes and close-quarters favor wall/brawl
         }
     }
 ];
