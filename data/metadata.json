@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-02-22T21:08:32.345Z",
+  "source": {
+    "heroes": "overfast_catalog",
+    "stats": "official_overwatch_rates_scrape",
+    "portraits": "overfast_new_or_missing"
+  },
+  "syncSummary": {
+    "totalHeroes": 50,
+    "newHeroes": [],
+    "droppedUnverifiedHeroes": [],
+    "portraitsDownloaded": 0,
+    "portraitFailures": [],
+    "usedOfficialRates": true,
+    "ranksSynced": 8,
+    "mapsSynced": 45
+  }
+}

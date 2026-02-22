@@ -1,0 +1,10 @@
+{
+  "name": "overwatch-hero-picker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data:extract-legacy": "node scripts/dev/extract-legacy-data.mjs",
+    "data:seed-stats": "node scripts/dev/generate-seed-stats.mjs",
+    "data:sync": "node scripts/update-overwatch-data.mjs"
+  }
+}

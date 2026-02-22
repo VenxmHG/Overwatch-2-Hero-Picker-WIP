@@ -37,7 +37,10 @@
             </div>
             <div class="filter">  
                 <input type="text" id="search-input" placeholder="Filter heroes...">  <!-- Text input for filtering heroes by name -->
+                <label for="rank-select">Rank:</label>
+                <select id="rank-select" aria-label="Select rank for hero scoring"></select>
             </div>
+            <div id="data-updated-at" class="data-updated-at" aria-live="polite"></div>
             <div class="heroes" id="hero-list">
                 <!-- Hero elements will be dynamically added here -->  <!-- Placeholder for dynamically added hero elements -->
             </div>
@@ -59,6 +62,7 @@
         </div>
     </div>
     
+    <script src="data/bundle.js"></script>
     <script src="script.js"></script> 
 </body>
 </html>

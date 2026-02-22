@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-02-22T19:11:40.079Z",
+  "weights": {
+    "winRate": 0.7,
+    "pickRate": 0.3
+  },
+  "scoreRange": {
+    "min": 40,
+    "max": 100
+  },
+  "roundTo": 10,
+  "missingDataFallbackScore": 75,
+  "tierThresholds": {
+    "sTierMin": 95,
+    "aToBTierMin": 85,
+    "bToCTierMin": 75,
+    "cToDTierMin": 65,
+    "fTierMax": 55
+  }
+}
