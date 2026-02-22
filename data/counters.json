@@ -4,6 +4,7 @@
     "Doomfist",
     "Freja",
     "Hazard",
+    "Jetpack Cat",
     "Junker Queen",
     "Mauga",
     "Ramattra",
@@ -18,7 +19,9 @@
     "Brigitte",
     "Cassidy",
     "Echo",
+    "Emre",
     "Hazard",
+    "Jetpack Cat",
     "Junker Queen",
     "Junkrat",
     "Juno",
@@ -30,6 +33,7 @@
     "Zarya"
   ],
   "Baptiste": [
+    "Jetpack Cat",
     "Junkrat",
     "Pharah",
     "Torbjorn",
@@ -37,6 +41,8 @@
   ],
   "Bastion": [
     "Brigitte",
+    "Domina",
+    "Jetpack Cat",
     "Lifeweaver",
     "Moira",
     "Ramattra",
@@ -46,6 +52,7 @@
     "Zarya"
   ],
   "Brigitte": [
+    "Anran",
     "Doomfist",
     "D.VA",
     "Hazard",
@@ -56,7 +63,9 @@
   "Cassidy": [
     "Doomfist",
     "Echo",
+    "Emre",
     "Hazard",
+    "Jetpack Cat",
     "Lucio",
     "Moira",
     "Pharah",
@@ -69,6 +78,7 @@
   ],
   "Doomfist": [
     "Ashe",
+    "Domina",
     "Baptiste",
     "Freja",
     "Hazard",
@@ -85,6 +95,7 @@
     "Cassidy",
     "Doomfist",
     "Echo",
+    "Emre",
     "Freja",
     "Hanzo",
     "Hazard",
@@ -128,10 +139,12 @@
   "Genji": [
     "Ashe",
     "Bastion",
+    "Emre",
     "Freja",
     "Hanzo",
     "Hazard",
     "Juno",
+    "Mizuki",
     "Widowmaker"
   ],
   "Hanzo": [
@@ -166,6 +179,7 @@
   ],
   "Illari": [
     "Echo",
+    "Jetpack Cat",
     "Lifeweaver",
     "Pharah",
     "Torbjorn",
@@ -185,6 +199,7 @@
     "Bastion",
     "Baptiste",
     "Illari",
+    "Jetpack Cat",
     "Lifeweaver",
     "Reinhardt",
     "Roadhog",
@@ -234,6 +249,7 @@
   ],
   "Mei": [
     "D.VA",
+    "Domina",
     "Genji",
     "Hazard",
     "Junker Queen",
@@ -249,8 +265,10 @@
     "Genji"
   ],
   "Orisa": [
+    "Anran",
     "Bastion",
     "Hazard",
+    "Jetpack Cat",
     "Mauga",
     "Pharah",
     "Ramattra",
@@ -286,6 +304,7 @@
     "Zarya"
   ],
   "Reaper": [
+    "Domina",
     "Junker Queen",
     "Mauga",
     "Pharah",
@@ -303,12 +322,14 @@
     "Bastion",
     "Doomfist",
     "Hazard",
+    "Jetpack Cat",
     "Moira",
     "Reinhardt",
     "Winston",
     "Wrecking Ball"
   ],
   "Sigma": [
+    "Anran",
     "Ashe",
     "Bastion",
     "Cassidy",
@@ -327,6 +348,7 @@
     "Bastion",
     "Cassidy",
     "Echo",
+    "Emre",
     "Hazard",
     "Juno",
     "Orisa",
@@ -340,6 +362,7 @@
   "Soldier: 76": [
     "Echo",
     "Hazard",
+    "Jetpack Cat",
     "Juno",
     "Junker Queen",
     "Pharah",
@@ -353,10 +376,12 @@
     "Doomfist",
     "Echo",
     "Hazard",
+    "Jetpack Cat",
     "Juno",
     "Lucio",
     "Mauga",
     "Mercy",
+    "Mizuki",
     "Pharah",
     "Sigma",
     "Soldier: 76",
@@ -382,9 +407,11 @@
     "Ana",
     "Ashe",
     "Doomfist",
+    "Emre",
     "Hazard",
     "Juno",
     "Mercy",
+    "Mizuki",
     "Pharah",
     "Ramattra",
     "Sigma",
@@ -407,6 +434,7 @@
     "Ana",
     "Ashe",
     "Cassidy",
+    "Emre",
     "Freja",
     "Hanzo",
     "Hazard",
@@ -425,10 +453,12 @@
     "Zarya"
   ],
   "Winston": [
+    "Domina",
     "Freja",
     "Hazard",
     "Juno",
     "Mercy",
+    "Mizuki",
     "Pharah",
     "Symmetra",
     "Widowmaker",
@@ -437,6 +467,7 @@
   "Wrecking Ball": [
     "Ashe",
     "Baptiste",
+    "Domina",
     "Hazard",
     "Illari",
     "Kiriko",
@@ -468,16 +499,55 @@
     "Bastion",
     "Doomfist",
     "Junker Queen",
+    "Mizuki",
     "Orisa",
     "Ramattra",
     "Roadhog",
     "Torbjorn",
     "Winston"
   ],
-  "Anran": [],
-  "Domina": [],
-  "Emre": [],
-  "Jetpack Cat": [],
-  "Mizuki": [],
+  "Anran": [
+    "Ana",
+    "Baptiste",
+    "Illari",
+    "Ramattra",
+    "Reaper",
+    "Reinhardt",
+    "Torbjorn",
+    "Zenyatta"
+  ],
+  "Domina": [
+    "Anran",
+    "Ashe",
+    "Domina",
+    "Emre",
+    "Sigma",
+    "Soldier: 76",
+    "Sojourn",
+    "Widowmaker"
+  ],
+  "Emre": [
+    "Ana",
+    "Anran",
+    "Jetpack Cat",
+    "Pharah",
+    "Reinhardt",
+    "Zenyatta"
+  ],
+  "Jetpack Cat": [
+    "Brigitte",
+    "Mei",
+    "Ramattra",
+    "Reinhardt",
+    "Sigma",
+    "Zarya"
+  ],
+  "Mizuki": [
+    "Echo",
+    "Hanzo",
+    "Junkrat",
+    "Pharah",
+    "Zenyatta"
+  ],
   "Vendetta": []
 }
