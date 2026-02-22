@@ -415,6 +415,7 @@ window.__OW_DATA__ = Object.freeze(
       "Ramattra",
       "Roadhog",
       "Torbjorn",
+      "Vendetta",
       "Venture",
       "Wrecking Ball",
       "Wuyang"
@@ -435,6 +436,7 @@ window.__OW_DATA__ = Object.freeze(
       "Pharah",
       "Soldier: 76",
       "Torbjorn",
+      "Vendetta",
       "Zarya"
     ],
     "Baptiste": [
@@ -442,7 +444,8 @@ window.__OW_DATA__ = Object.freeze(
       "Junkrat",
       "Pharah",
       "Torbjorn",
-      "Tracer"
+      "Tracer",
+      "Vendetta"
     ],
     "Bastion": [
       "Brigitte",
@@ -462,6 +465,7 @@ window.__OW_DATA__ = Object.freeze(
       "D.VA",
       "Hazard",
       "Tracer",
+      "Vendetta",
       "Winston",
       "Wrecking Ball"
     ],
@@ -477,6 +481,7 @@ window.__OW_DATA__ = Object.freeze(
       "Reaper",
       "Sombra",
       "Torbjorn",
+      "Vendetta",
       "Venture",
       "Winston",
       "Wrecking Ball"
@@ -681,6 +686,7 @@ window.__OW_DATA__ = Object.freeze(
       "Reinhardt",
       "Roadhog",
       "Torbjorn",
+      "Vendetta",
       "Widowmaker"
     ],
     "Pharah": [
@@ -730,6 +736,7 @@ window.__OW_DATA__ = Object.freeze(
       "Jetpack Cat",
       "Moira",
       "Reinhardt",
+      "Vendetta",
       "Winston",
       "Wrecking Ball"
     ],
@@ -747,7 +754,8 @@ window.__OW_DATA__ = Object.freeze(
       "Reaper",
       "Roadhog",
       "Soldier: 76",
-      "Torbjorn"
+      "Torbjorn",
+      "Vendetta"
     ],
     "Sojourn": [
       "Bastion",
@@ -762,6 +770,7 @@ window.__OW_DATA__ = Object.freeze(
       "Roadhog",
       "Soldier: 76",
       "Torbjorn",
+      "Vendetta",
       "Zarya"
     ],
     "Soldier: 76": [
@@ -772,7 +781,8 @@ window.__OW_DATA__ = Object.freeze(
       "Junker Queen",
       "Pharah",
       "Sigma",
-      "Torbjorn"
+      "Torbjorn",
+      "Vendetta"
     ],
     "Sombra": [
       "Ana",
@@ -954,7 +964,11 @@ window.__OW_DATA__ = Object.freeze(
       "Pharah",
       "Zenyatta"
     ],
-    "Vendetta": []
+    "Vendetta": [
+      "Illari",
+      "Lifeweaver",
+      "Zenyatta"
+    ]
   },
   "maps": [
     {
@@ -2692,7 +2706,7 @@ window.__OW_DATA__ = Object.freeze(
   "stats": {
     "schemaVersion": 1,
     "source": "official_overwatch_rates_scrape",
-    "updatedAt": "2026-02-22T21:50:56.303Z",
+    "updatedAt": "2026-02-22T22:11:18.963Z",
     "ranks": [
       "All",
       "Bronze",
@@ -117976,7 +117990,7 @@ window.__OW_DATA__ = Object.freeze(
   },
   "metadata": {
     "schemaVersion": 1,
-    "updatedAt": "2026-02-22T21:51:58.760Z",
+    "updatedAt": "2026-02-22T22:12:21.768Z",
     "source": {
       "heroes": "overfast_catalog",
       "stats": "official_overwatch_rates_scrape",
