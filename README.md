@@ -42,9 +42,9 @@ Run this workflow from GitHub Actions when you want to update live site data wit
 1. Open **Actions** in your repo.
 2. Select **Overwatch Data Sync**.
 3. Click **Run workflow** and set optional inputs.
-4. Run it on `main`.
+4. Run it on your default branch (`master` in this repo).
 
-If sync output changes files in `data/` or `images/`, the workflow commits and pushes directly to `main`, which updates GitHub Pages automatically.
+If sync output changes files in `data/` or `images/`, the workflow commits and pushes directly to your default branch, which updates GitHub Pages automatically.
 
 ### Workflow Inputs
 
