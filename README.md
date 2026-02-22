@@ -33,6 +33,22 @@ Static Overwatch hero picker with rank-aware score calculation and automated her
 
 ## Automation
 
-Daily GitHub Action: `.github/workflows/overwatch-data-sync.yml`
+Manual GitHub Action: `.github/workflows/overwatch-data-sync.yml`
 
-It runs `node scripts/update-overwatch-data.mjs` and opens/updates a PR with changed data/assets.
+Run this workflow from GitHub Actions when you want to update live site data without using a local command.
+
+### GitHub Actions Run Steps
+
+1. Open **Actions** in your repo.
+2. Select **Overwatch Data Sync**.
+3. Click **Run workflow** and set optional inputs.
+4. Run it on `main`.
+
+If sync output changes files in `data/` or `images/`, the workflow commits and pushes directly to `main`, which updates GitHub Pages automatically.
+
+### Workflow Inputs
+
+- `refresh_portraits`: re-download portraits for all heroes.
+- `skip_official`: skip official rates scraper and use local fallback stats.
+- `skip_catalog`: skip hero catalog and portrait catalog sync.
+- `dry_run`: run sync and print summary without committing or pushing changes.

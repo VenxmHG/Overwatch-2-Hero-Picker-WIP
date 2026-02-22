@@ -409,6 +409,7 @@ window.__OW_DATA__ = Object.freeze(
       "Doomfist",
       "Freja",
       "Hazard",
+      "Jetpack Cat",
       "Junker Queen",
       "Mauga",
       "Ramattra",
@@ -423,7 +424,9 @@ window.__OW_DATA__ = Object.freeze(
       "Brigitte",
       "Cassidy",
       "Echo",
+      "Emre",
       "Hazard",
+      "Jetpack Cat",
       "Junker Queen",
       "Junkrat",
       "Juno",
@@ -435,6 +438,7 @@ window.__OW_DATA__ = Object.freeze(
       "Zarya"
     ],
     "Baptiste": [
+      "Jetpack Cat",
       "Junkrat",
       "Pharah",
       "Torbjorn",
@@ -442,6 +446,8 @@ window.__OW_DATA__ = Object.freeze(
     ],
     "Bastion": [
       "Brigitte",
+      "Domina",
+      "Jetpack Cat",
       "Lifeweaver",
       "Moira",
       "Ramattra",
@@ -451,6 +457,7 @@ window.__OW_DATA__ = Object.freeze(
       "Zarya"
     ],
     "Brigitte": [
+      "Anran",
       "Doomfist",
       "D.VA",
       "Hazard",
@@ -461,7 +468,9 @@ window.__OW_DATA__ = Object.freeze(
     "Cassidy": [
       "Doomfist",
       "Echo",
+      "Emre",
       "Hazard",
+      "Jetpack Cat",
       "Lucio",
       "Moira",
       "Pharah",
@@ -474,6 +483,7 @@ window.__OW_DATA__ = Object.freeze(
     ],
     "Doomfist": [
       "Ashe",
+      "Domina",
       "Baptiste",
       "Freja",
       "Hazard",
@@ -490,6 +500,7 @@ window.__OW_DATA__ = Object.freeze(
       "Cassidy",
       "Doomfist",
       "Echo",
+      "Emre",
       "Freja",
       "Hanzo",
       "Hazard",
@@ -533,10 +544,12 @@ window.__OW_DATA__ = Object.freeze(
     "Genji": [
       "Ashe",
       "Bastion",
+      "Emre",
       "Freja",
       "Hanzo",
       "Hazard",
       "Juno",
+      "Mizuki",
       "Widowmaker"
     ],
     "Hanzo": [
@@ -571,6 +584,7 @@ window.__OW_DATA__ = Object.freeze(
     ],
     "Illari": [
       "Echo",
+      "Jetpack Cat",
       "Lifeweaver",
       "Pharah",
       "Torbjorn",
@@ -590,6 +604,7 @@ window.__OW_DATA__ = Object.freeze(
       "Bastion",
       "Baptiste",
       "Illari",
+      "Jetpack Cat",
       "Lifeweaver",
       "Reinhardt",
       "Roadhog",
@@ -639,6 +654,7 @@ window.__OW_DATA__ = Object.freeze(
     ],
     "Mei": [
       "D.VA",
+      "Domina",
       "Genji",
       "Hazard",
       "Junker Queen",
@@ -654,8 +670,10 @@ window.__OW_DATA__ = Object.freeze(
       "Genji"
     ],
     "Orisa": [
+      "Anran",
       "Bastion",
       "Hazard",
+      "Jetpack Cat",
       "Mauga",
       "Pharah",
       "Ramattra",
@@ -691,6 +709,7 @@ window.__OW_DATA__ = Object.freeze(
       "Zarya"
     ],
     "Reaper": [
+      "Domina",
       "Junker Queen",
       "Mauga",
       "Pharah",
@@ -708,12 +727,14 @@ window.__OW_DATA__ = Object.freeze(
       "Bastion",
       "Doomfist",
       "Hazard",
+      "Jetpack Cat",
       "Moira",
       "Reinhardt",
       "Winston",
       "Wrecking Ball"
     ],
     "Sigma": [
+      "Anran",
       "Ashe",
       "Bastion",
       "Cassidy",
@@ -732,6 +753,7 @@ window.__OW_DATA__ = Object.freeze(
       "Bastion",
       "Cassidy",
       "Echo",
+      "Emre",
       "Hazard",
       "Juno",
       "Orisa",
@@ -745,6 +767,7 @@ window.__OW_DATA__ = Object.freeze(
     "Soldier: 76": [
       "Echo",
       "Hazard",
+      "Jetpack Cat",
       "Juno",
       "Junker Queen",
       "Pharah",
@@ -758,10 +781,12 @@ window.__OW_DATA__ = Object.freeze(
       "Doomfist",
       "Echo",
       "Hazard",
+      "Jetpack Cat",
       "Juno",
       "Lucio",
       "Mauga",
       "Mercy",
+      "Mizuki",
       "Pharah",
       "Sigma",
       "Soldier: 76",
@@ -787,9 +812,11 @@ window.__OW_DATA__ = Object.freeze(
       "Ana",
       "Ashe",
       "Doomfist",
+      "Emre",
       "Hazard",
       "Juno",
       "Mercy",
+      "Mizuki",
       "Pharah",
       "Ramattra",
       "Sigma",
@@ -812,6 +839,7 @@ window.__OW_DATA__ = Object.freeze(
       "Ana",
       "Ashe",
       "Cassidy",
+      "Emre",
       "Freja",
       "Hanzo",
       "Hazard",
@@ -830,10 +858,12 @@ window.__OW_DATA__ = Object.freeze(
       "Zarya"
     ],
     "Winston": [
+      "Domina",
       "Freja",
       "Hazard",
       "Juno",
       "Mercy",
+      "Mizuki",
       "Pharah",
       "Symmetra",
       "Widowmaker",
@@ -842,6 +872,7 @@ window.__OW_DATA__ = Object.freeze(
     "Wrecking Ball": [
       "Ashe",
       "Baptiste",
+      "Domina",
       "Hazard",
       "Illari",
       "Kiriko",
@@ -873,17 +904,56 @@ window.__OW_DATA__ = Object.freeze(
       "Bastion",
       "Doomfist",
       "Junker Queen",
+      "Mizuki",
       "Orisa",
       "Ramattra",
       "Roadhog",
       "Torbjorn",
       "Winston"
     ],
-    "Anran": [],
-    "Domina": [],
-    "Emre": [],
-    "Jetpack Cat": [],
-    "Mizuki": [],
+    "Anran": [
+      "Ana",
+      "Baptiste",
+      "Illari",
+      "Ramattra",
+      "Reaper",
+      "Reinhardt",
+      "Torbjorn",
+      "Zenyatta"
+    ],
+    "Domina": [
+      "Anran",
+      "Ashe",
+      "Domina",
+      "Emre",
+      "Sigma",
+      "Soldier: 76",
+      "Sojourn",
+      "Widowmaker"
+    ],
+    "Emre": [
+      "Ana",
+      "Anran",
+      "Jetpack Cat",
+      "Pharah",
+      "Reinhardt",
+      "Zenyatta"
+    ],
+    "Jetpack Cat": [
+      "Brigitte",
+      "Mei",
+      "Ramattra",
+      "Reinhardt",
+      "Sigma",
+      "Zarya"
+    ],
+    "Mizuki": [
+      "Echo",
+      "Hanzo",
+      "Junkrat",
+      "Pharah",
+      "Zenyatta"
+    ],
     "Vendetta": []
   },
   "maps": [
@@ -2622,7 +2692,7 @@ window.__OW_DATA__ = Object.freeze(
   "stats": {
     "schemaVersion": 1,
     "source": "official_overwatch_rates_scrape",
-    "updatedAt": "2026-02-22T21:07:28.131Z",
+    "updatedAt": "2026-02-22T21:50:56.303Z",
     "ranks": [
       "All",
       "Bronze",
@@ -117906,7 +117976,7 @@ window.__OW_DATA__ = Object.freeze(
   },
   "metadata": {
     "schemaVersion": 1,
-    "updatedAt": "2026-02-22T21:08:32.345Z",
+    "updatedAt": "2026-02-22T21:51:58.760Z",
     "source": {
       "heroes": "overfast_catalog",
       "stats": "official_overwatch_rates_scrape",

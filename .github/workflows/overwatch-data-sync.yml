@@ -1,13 +1,35 @@
 name: Overwatch Data Sync
 
 on:
-  schedule:
-    - cron: "0 14 * * *"
   workflow_dispatch:
+    inputs:
+      refresh_portraits:
+        description: Re-download portraits for all heroes
+        type: boolean
+        required: false
+        default: false
+      skip_official:
+        description: Skip official rates scraper and use local snapshot fallback
+        type: boolean
+        required: false
+        default: false
+      skip_catalog:
+        description: Skip hero catalog and portrait catalog sync
+        type: boolean
+        required: false
+        default: false
+      dry_run:
+        description: Run sync without committing/pushing changes
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
-  pull-requests: write
+
+concurrency:
+  group: overwatch-data-sync
+  cancel-in-progress: false
 
 jobs:
   sync-data:
@@ -15,6 +37,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -22,21 +47,52 @@ jobs:
           node-version: "20"
 
       - name: Sync heroes, portraits, and stats
-        run: node scripts/update-overwatch-data.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ "${{ inputs.refresh_portraits }}" == "true" ]]; then args+=(--refresh-portraits); fi
+          if [[ "${{ inputs.skip_official }}" == "true" ]]; then args+=(--skip-official); fi
+          if [[ "${{ inputs.skip_catalog }}" == "true" ]]; then args+=(--skip-catalog); fi
+          if [[ "${{ inputs.dry_run }}" == "true" ]]; then args+=(--dry-run); fi
+          node scripts/update-overwatch-data.mjs "${args[@]}"
 
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "chore(data): sync overwatch heroes and stats"
-          branch: "chore/overwatch-data-sync"
-          delete-branch: true
-          title: "chore(data): sync overwatch heroes and stats"
-          body: |
-            Automated daily sync for:
-            - hero roster updates
-            - hero portraits
-            - rank/map win-rate and pick-rate statistics
-            - score baseline refresh
-          labels: |
-            automation
-            data-sync
+      - name: Print sync summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -f "data/metadata.json" ]]; then
+            echo "No metadata file found after sync."
+            exit 0
+          fi
+          node --input-type=module -e "
+            import fs from 'node:fs';
+            const metadata = JSON.parse(fs.readFileSync('data/metadata.json', 'utf8'));
+            const summary = metadata.syncSummary ?? {};
+            console.log('Updated at:', metadata.updatedAt ?? 'n/a');
+            console.log('Stats source:', metadata?.source?.stats ?? 'n/a');
+            console.log('Heroes total:', summary.totalHeroes ?? 'n/a');
+            const newHeroes = Array.isArray(summary.newHeroes) ? summary.newHeroes : [];
+            console.log('New heroes:', newHeroes.length > 0 ? newHeroes.join(', ') : 'none');
+            console.log('Portraits downloaded:', summary.portraitsDownloaded ?? 'n/a');
+          "
+
+      - name: Commit and push updated data
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ inputs.dry_run }}" == "true" ]]; then
+            echo "Dry run enabled. Skipping commit and push."
+            exit 0
+          fi
+
+          if [[ -z "$(git status --porcelain data images)" ]]; then
+            echo "No data changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data images
+          git commit -m "chore(data): sync overwatch heroes and stats"
+          git push origin HEAD:main
