@@ -1,16 +1,16 @@
 [
   {
     "name": "Reaper",
-    "score": 70,
-    "originalScore": 70,
+    "score": 80,
+    "originalScore": 80,
     "image": "reaper-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/dc6ff07ac790c00dc95a40882449617bb6e0e38906b353a630cffe0c815270a9.png"
   },
   {
     "name": "Doomfist",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "doomfist-portrait-small.png",
     "category": "Tank",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ff5c54f43ad253c7faeda9c4ed31d42582ea6b19205d197866f3dd0c0aa14c16.png"
@@ -57,24 +57,24 @@
   },
   {
     "name": "Mei",
-    "score": 70,
-    "originalScore": 70,
+    "score": 80,
+    "originalScore": 80,
     "image": "mei-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4a55ced3bd597fb08e0fde9dc007f8543ac616ba98ca3db9b0e4d871a8ae17f8.png"
   },
   {
     "name": "Ana",
-    "score": 60,
-    "originalScore": 60,
+    "score": 50,
+    "originalScore": 50,
     "image": "ana-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/985b06beae46b7ba3ca87d1512d0fc62ca7f206ceca58ef16fc44d43a1cc84ed.png"
   },
   {
     "name": "Orisa",
-    "score": 40,
-    "originalScore": 40,
+    "score": 50,
+    "originalScore": 50,
     "image": "orisa-portrait-small.png",
     "category": "Tank",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a73958a28551f5254f3ab3f97c5f5f8d698a95c0b6a515d1a2b1caac169205a6.png"
@@ -97,16 +97,16 @@
   },
   {
     "name": "Genji",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "genji-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/156b12c20b1aea872c1eeb5bb37a7de1047b2ab30ecefd0663a8925badde1ea8.png"
   },
   {
     "name": "Junkrat",
-    "score": 60,
-    "originalScore": 60,
+    "score": 70,
+    "originalScore": 70,
     "image": "junkrat-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7660b9fc6f25f30858fdd8797fe0d52b2306f1e78fef99843f58a274e69af046.png"
@@ -129,8 +129,8 @@
   },
   {
     "name": "Widowmaker",
-    "score": 70,
-    "originalScore": 70,
+    "score": 50,
+    "originalScore": 50,
     "image": "widowmaker-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6e4702b45f196aaf51555cf57327322721f45458b17f5f0643ed008a88378259.png"
@@ -145,8 +145,8 @@
   },
   {
     "name": "Hanzo",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "hanzo-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/78b61c3e806fb26b02b8980fba62189155074fc15bd865b0883268e546030be5.png"
@@ -161,8 +161,8 @@
   },
   {
     "name": "Torbjorn",
-    "score": 60,
-    "originalScore": 60,
+    "score": 80,
+    "originalScore": 80,
     "image": "torbjorn-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ce17118cedc29b0d2ac1e059666bed36b9531c85079b0b894bb402d12c917ba9.png"
@@ -177,40 +177,40 @@
   },
   {
     "name": "Sombra",
-    "score": 60,
-    "originalScore": 60,
+    "score": 50,
+    "originalScore": 50,
     "image": "sombra-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/47727b02a16e3bd7b2447d86ae1edf11587bc320b2aecb4f2f16a7ca4ad4e8a0.png"
   },
   {
     "name": "Wrecking Ball",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "wreckingball-portrait-small.png",
     "category": "Tank",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9ef1d58867136e0b26f928d896000b9dab216118f6e2f59e53f2e975e1e27afa.png"
   },
   {
     "name": "Mercy",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "mercy-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3bfb8bd8ec827e53d870f1238ab73d8aa1f5dbfbcfaaf7f96ffcd35b5c6102ab.png"
   },
   {
     "name": "Soldier: 76",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "soldier76-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c93b5f0a528c40473188f77cc2a267aee7d5b6cf5c9e104105d634b4388674e2.png"
   },
   {
     "name": "Brigitte",
-    "score": 60,
-    "originalScore": 60,
+    "score": 70,
+    "originalScore": 70,
     "image": "brigitte-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/795fba91376d87d441a7f359ae12a3175dfa95825ccc4414cc6b95b129fc4cb0.png"
@@ -225,24 +225,24 @@
   },
   {
     "name": "Baptiste",
-    "score": 50,
-    "originalScore": 50,
+    "score": 40,
+    "originalScore": 40,
     "image": "baptiste-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d4e6f1ca45d9f88fa89260787397f141a6f007b14e5b26698883b6a17bab9680.png"
   },
   {
     "name": "Symmetra",
-    "score": 60,
-    "originalScore": 60,
+    "score": 80,
+    "originalScore": 80,
     "image": "symmetra-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ebec57e8bd68b3d4383edfeb34f8f52dd0b94a6467d594c2fee722e8a97c32aa.png"
   },
   {
     "name": "Bastion",
-    "score": 60,
-    "originalScore": 60,
+    "score": 70,
+    "originalScore": 70,
     "image": "bastion-portrait-small.png",
     "category": "DPS",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4ede795c2a681aaccfa72d0c901cba0cb8a2c292fd6a97b2ba9faed161c2d184.png"
@@ -273,8 +273,8 @@
   },
   {
     "name": "Kiriko",
-    "score": 60,
-    "originalScore": 60,
+    "score": 50,
+    "originalScore": 50,
     "image": "kiriko-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/408603fe037e8576078eaac5eab2fb251489ced4003b11f5f522776d43d0b83d.png"
@@ -321,8 +321,8 @@
   },
   {
     "name": "Juno",
-    "score": 80,
-    "originalScore": 80,
+    "score": 70,
+    "originalScore": 70,
     "image": "juno-portrait-small.png",
     "category": "Support",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c0167d251e57b0aa2b1e16c37d87f0e7c77263db9dd0503d77b5f2589bf3e4a0.png"
@@ -370,24 +370,24 @@
   {
     "name": "Emre",
     "category": "DPS",
-    "score": 70,
-    "originalScore": 70,
+    "score": 60,
+    "originalScore": 60,
     "image": "emre-portrait-small.png",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c51e2f698138861c0e3b6cfab3c3ca9d67fd709be175e7c397aa6f2649712a30.png"
   },
   {
     "name": "Jetpack Cat",
     "category": "Support",
-    "score": 80,
-    "originalScore": 80,
+    "score": 90,
+    "originalScore": 90,
     "image": "jetpack-cat-portrait-small.png",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/03a184cd0de27091e0099ac22635ad9615a8f6997881a5c25cc5f2444764f729.png"
   },
   {
     "name": "Mizuki",
     "category": "Support",
-    "score": 100,
-    "originalScore": 100,
+    "score": 90,
+    "originalScore": 90,
     "image": "mizuki-portrait-small.png",
     "portraitUrl": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a2c8dd2fdc10e5b5110062e2bd5dc3fc56e692a812f35f0fcea3b580fd01f578.png"
   },
